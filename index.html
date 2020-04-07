@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tripobeers!</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="header">
+      <img src="https://triporate.com/wp-content/uploads/2018/10/triporate-h.svg" />
+
+      <div id="inputGame" width="500" height="500">
+        <span>¿Quién eres?: </span><input id="name" type="text" style="font-size: 1em;" /><button
+          id="sendButton"
+          style="font-size: 1em;"
+          onclick="var name= document.getElementById('name').value;if (name){initAll(name);document.getElementById('game').style.display = 'block';document.getElementById('inputGame').style.display = 'none';}else{alert('Por favor mete tu maldito o maldita nombre o nombra.');}"
+        >
+          A por mis cervezas
+        </button>
+
+        <div><img src="./hqdefault.jpg" /></div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div id="playerCount"></div>
+      <div id="scores"></div>
+    </div>
+
+    <canvas id="game" width="500" height="500" style="display: none;"></canvas>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="./game.js"></script>
+    <script src="./client.js"></script>
+  </body>
+</html>
