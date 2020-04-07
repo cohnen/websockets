@@ -6,11 +6,6 @@ var engine = require('./public/game');
 
 var gameInterval, updateInterval;
 
-function pirateName() {
-  var names = ['Edsel', 'Virginia', 'Fabiola', 'Ernesto', 'Saida', 'Marcos', 'Rafa'];
-  return names[Math.floor(Math.random() * names.length)];
-}
-
 // TODO: extract below
 
 function gameLoop() {
@@ -64,7 +59,7 @@ io.on('connection', function (socket) {
     y: posY,
     colour: engine.stringToColour(socket.id),
     score: 0,
-    name: pirateName(),
+    name: 'Anonymous',
   };
 
   // BEER & CODE
